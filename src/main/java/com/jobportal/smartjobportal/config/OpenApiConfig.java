@@ -2,6 +2,7 @@ package com.jobportal.smartjobportal.config;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.servers.Server;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -18,6 +19,11 @@ public class OpenApiConfig {
                                 "REST API for managing jobs, searching jobs, " +
                                 "filtering jobs, pagination, and sorting."
                         )
+                )
+                .addServersItem(
+                        new Server()
+                                .url("https://smart-job-portal-production.up.railway.app")
+                                .description("Railway Production Server")
                 );
     }
 }
